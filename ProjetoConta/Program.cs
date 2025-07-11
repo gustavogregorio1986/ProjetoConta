@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ProjetoConta.Data.Data;
+using ProjetoConta.Data.Mapping;
 using ProjetoConta.Data.Repository;
 using ProjetoConta.Data.Repository.Interface;
 using ProjetoConta.Service.Service;
@@ -19,6 +20,8 @@ builder.Services.AddDbContext<ProjetoContaContext>(options =>
 
 builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
 builder.Services.AddScoped<ITarefaservice, TarefaService>();
+
+builder.Services.AddAutoMapper(typeof(TarefaMap).Assembly);
 
 var app = builder.Build();
 
