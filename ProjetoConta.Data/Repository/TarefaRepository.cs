@@ -1,4 +1,5 @@
-﻿using ProjetoConta.Data.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoConta.Data.Data;
 using ProjetoConta.Data.Repository.Interface;
 using ProjetoConta.Dominio.Dominio;
 using System;
@@ -22,6 +23,7 @@ namespace ProjetoConta.Data.Repository
         {
             await _context.AddAsync(tarefa);
             await _context.SaveChangesAsync();
+            return tarefa;
         }
 
         public async Task<List<Tarefa>> ObterTarefas()
