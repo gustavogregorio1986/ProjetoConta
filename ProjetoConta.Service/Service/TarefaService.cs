@@ -27,5 +27,10 @@ namespace ProjetoConta.Service.Service
         {
             return await _tarefaRepository.ObterTarefas();
         }
+
+        public async Task<List<Tarefa>> ObterTarefasConcluidasNosUltimosDias(int dias)
+        {
+            return await _tarefaRepository.ObterTarefasConcluidasNosUltimosDias(dias);
+        }
     }
 }

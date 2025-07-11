@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoConta.Data.Data;
 
@@ -11,9 +12,10 @@ using ProjetoConta.Data.Data;
 namespace ProjetoConta.Data.Migrations
 {
     [DbContext(typeof(ProjetoContaContext))]
-    partial class ProjetoContaContextModelSnapshot : ModelSnapshot
+    [Migration("20250711125633_AddDateTime")]
+    partial class AddDateTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

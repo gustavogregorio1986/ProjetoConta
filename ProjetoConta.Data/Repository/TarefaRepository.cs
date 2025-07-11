@@ -30,5 +30,14 @@ namespace ProjetoConta.Data.Repository
         {
             return await _context.Tarefas.ToListAsync();
         }
+
+        public async Task<List<Tarefa>> ObterTarefasConcluidasNosUltimosDias(int dias)
+        {
+            var dataLimite = DateTime.UtcNow.AddDays(-dias);
+
+            return await _context.Tarefas
+                .Where(t => t.DataConclusao.HasValue && t.DataConclusao.Value >= dataLimite)
+                .ToListAsync();
+        }
     }
 }

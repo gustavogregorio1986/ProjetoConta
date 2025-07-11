@@ -16,8 +16,8 @@ namespace ProjetoConta.Dominio.Dominio
 
         public string? Status { get; set; }
 
-        public DateTime DataCriacao { get; set; }
+        public DateTime? DataCriacao { get; set; }
 
-        public DateTime DataConclusao { get; set; }
+        public DateTime? DataConclusao { get; set; }
     }
 }

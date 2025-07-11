@@ -12,5 +12,7 @@ namespace ProjetoConta.Service.Service.Interface
         Task<Tarefa> AdicionarTarefa(Tarefa tarefa);
 
         Task<List<Tarefa>> ObterTarefas();
+
+        Task<List<Tarefa>> ObterTarefasConcluidasNosUltimosDias(int dias);
     }
 }
