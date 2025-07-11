@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProjetoConta.Data.Data;
+using ProjetoConta.Data.Repository;
+using ProjetoConta.Data.Repository.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ProjetoContaContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
 
 var app = builder.Build();
 
